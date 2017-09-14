@@ -22,13 +22,11 @@ end
 plot(phi,P(:,1),'-',phi,P(:,2),':',phi,P(:,3),'--')
 xlabel('phi (the counter-clockwise rotation angle)')
 legend('A','B','C');
-title('Values of A, B, and C when 2x^2 + xy + 3y^2 - x + y - 2 is rotated 
-\phi radians')
+title('Values of A, B, and C when 2x^2 + xy + 3y^2 - x + y - 2 is rotated \phi radians')
 
 % Plot the D, E, and F values
 figure;
 plot(phi,P(:,4),'-',phi,P(:,5),':',phi,P(:,6),'--')
 xlabel('phi (the counter-clockwise rotation angle)')
 legend('D','E','F');
-title('Values of D, E, F when 2x^2 + xy + 3y^2 - x + y - 2 is rotated \phi 
-radians')
+title('Values of D, E, F when 2x^2 + xy + 3y^2 - x + y - 2 is rotated \phi radians')
