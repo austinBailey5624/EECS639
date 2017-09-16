@@ -1,13 +1,14 @@
 function New_Kappa = RotateConic(Kappa,phi)
 c = cos(phi);
 s = sin(phi);
-x = Kappa.D;
-y = -Kappa.E;
-aa = (Kappa.A)*(x*c+y*s)^(2);
-bb = (Kappa.B)*(x*c+y*s)*(-s*x+c*y);
-cc = (Kappa.C)*(-s*x+c*y)^2;
-dd = (Kappa.D)*(x*c+y*s);
-ee = (Kappa.E)*(-s*x+c*y);
+
+aa = Kappa.A*(c.^2) - Kappa.B*c*s + Kappa.C*(s.^2);
+%bb = s*(2*Kappa.A*c - Kappa.B*s + 2*Kappa.C*c);
+bb = 2*Kappa.A*c*s + Kappa.B*c.^2 - Kappa.B*s.^2 - 2*Kappa.C*s*c;
+cc = Kappa.A*s*s + Kappa.B*c*s + Kappa.C*c*c;
+dd = Kappa.D*c - Kappa.E*s;
+ee = Kappa.D*s + Kappa.E*c;
 ff = Kappa.F;
+
 New_Kappa = MakeConic(aa,bb,cc,dd,ee,ff);
 end
