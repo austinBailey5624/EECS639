@@ -11,8 +11,8 @@ x=Eta.a*cos(t);
 y=Eta.b*sin(t);
 plot(x,y);
 %}
-x=(Eta.h-Eta.b:Eta.b/50:Eta.h+Eta.b);
-y =b*sqrt(  (x-Eta.h(Eta.a))  )+K
-y2=
+x=(Eta.h-Eta.a:Eta.a/50:Eta.h+Eta.a);
+y = Eta.b * sqrt(1 - (((x-Eta.h)/Eta.a).^2) ) + Eta.k;
+y2= -(Eta.b * sqrt(1 - (((x - Eta.h)/Eta.a).^2) )) + Eta.k;
 plot(x,y,'color','r'); hold on;
-plot(x,
+plot(x,y2,'color','b');
