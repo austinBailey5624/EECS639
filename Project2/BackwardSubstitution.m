@@ -10,9 +10,7 @@ for i=(dims-1):-1:1
     accum = 0;
     for j=dims:-1:i%solving for numerator of generalized expression
         accum = accum + data(i,j)*answersLookup(j);
-        disp(accum);
     end
     answersLookup(i)=accum*(-1)/data(i,i);
-    disp(answersLookup);
 end
         
