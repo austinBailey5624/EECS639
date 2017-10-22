@@ -4,18 +4,16 @@ dims = size(data,1);%return size n of a matrix
 
 answersLookup = zeros(dims,1);
 
-answersLookup(1) = data(1,dims);% return the n,nth value of a matrix
-disp(answersLookup);
+answersLookup(1) = data(1,1);% return the n,nth value of a matrix
 
-for i=(2):1:(dims)
+for i=2:1:dims
     accum = 0;
-    al = 1;
-    for j=dims:-1:i%solving for numerator of generalized expression
-        accum = accum + data(i,j)*answersLookup(al);
+    for j=1:1:i-1%solving for numerator of generalized expression
+        accum = accum + data(i,j)*answersLookup(j);
+        disp(j);
         disp(accum);
-        al = al + 1;
     end
-    answersLookup(i)=accum*(-1)/data(i,dims-i+1);
+    answersLookup(i)=accum*(-1)/data(i,i);
     disp(answersLookup);
 end
         
