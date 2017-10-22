@@ -20,6 +20,5 @@ for i=2:1:dims
         end
     end
     answers(i)=accum*(-1)/data(i,i);
-    disp(answers);
 end
 
