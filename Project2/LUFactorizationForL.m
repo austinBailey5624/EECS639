@@ -17,8 +17,9 @@ for i=1:dims
 end
 
 for i=2:dims
-    data(i,:) = data(i,:)-data(i,1)*data(1,:);
-%    result(i,1) = data(i,1)/divisionkey;
+    data(i,:) = data(i,:)-data(i,1)*data(1,:);%reduce the ith row by the first value in that row times that row
 end
 
+%Each iteraion only solves the leftmost column and top row,
+%Recurse to solve the rest
 result(2:dims,2:dims) = LUFactorizationForL(data(2:dims,2:dims));
