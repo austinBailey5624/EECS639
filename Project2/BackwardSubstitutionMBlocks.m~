@@ -1,3 +1,0 @@
-function answersLookup = BackwardSubstitutionMBlocks(data)
-answersLookup = Gaussian(data);
-answersLookup = BackwardSubstitution(answersLookup);
