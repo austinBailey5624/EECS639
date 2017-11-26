@@ -1,26 +1,30 @@
 function color = Newton(z)
-
-answers = zeros(21,1);
-answers(1) = z;
+x1 = z; %initial answer to be updated
+x2 = 0; %checks difference between previous and current
 for i=2:21
-    if(abs(answers(i)-1)<.0001)%checking if root 1 was found
-        color = 'y';
-        return;
-    end
-    if(abs(answers(i)+1)<.0001)%checking if root 2 was found
-        color = 'r';
-        return;
-    end
-    if(abs(answers(i)-0.4i)<.0001)%checking if root 3 was found
-        color = 'b';
-        return;
-    end
-    if(abs(answers(i)+0.4i)<.0001)%checking if root 4 was found
-        color = 'g';
-        return;
-    end
-    %preforming newtons method
-    answers(i) = answers(i-1) - (((answers(i-1)^2-1)*(answers(i-1)^2+.16))/(4*answers(i-1)^3 - 1.68*answers(i-1)));
+ if(abs(x2)<0.0001)
+     if(x1 == -1) % root 1 was found
+         color = 'y';
+         return;
+     end
+     if(x1 == 1) %root 2 was found
+         color = 'r';
+         return;
+     end
+     if(x1 == -0.4i) %root 3 was found
+         color = 'b';
+         return;
+     end
+     if(x1 == 0.4i) %root 4 was found
+         color = 'g';
+         return;
+     end
+ end
+ 
+    %performing newtons method
+    x2 = x1 - (((x1^2-1)*(x1^2+.16))/(4*x1^3 - 1.68*x1));
+    x1 = x2;
+    x2 = x2 - x1;
     
 end
 
