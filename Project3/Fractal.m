@@ -17,23 +17,11 @@ for i=1:150
     end
 end
 
-%we should be printing out a circle of the specific color at z(i) but we
-%are not working properly.
-for i=1:22500
-    if strcmp(colormap(i),'y')
-        plot(z(i), 'yo');
-    end
-    if strcmp(colormap(i),'r')
-        plot(z(i), 'ro');
-    end
-    if strcmp(colormap(i),'b')
-        plot(z(i), 'bo');
-    end
-    if strcmp(colormap(i),'g')
-        plot(z(i), 'go');
-    end
-    if strcmp(colormap(i),'k')
-        plot(z(i), 'ko');
-    end
+for i=1:22500 %drawing the actual fractal
+    plot(z(i), 'color', colormap(i), 'marker', '.');
+    hold on;
 end
+
+
+%plot(z, 'color', colormap(i), 'marker', '.');
  
