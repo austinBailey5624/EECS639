@@ -1,7 +1,9 @@
-function result = SteepestDescent(startingPoint,LMax)
+function result = SteepestDescent1(LMax)
 
 AlphaK = LMax;
-result{0} = startingPoint;
+%starting point is 1,1
+result{0}{0} =1;
+result{0}{1} = 1;
 
 %forty iterations max - arbitrary
 iterator = 1;
@@ -11,8 +13,8 @@ while(iterator<41 && ~(result{iterator} == result{iteratior-1} ))
           return; 
        else%minimum is greater than Lmax/2
            %add Lmax/2, update AlphaK
-           %result{size(result)+1}{0}
-           result = [result; AlphaK, 
+           result = [result; AlphaK/2, f(AlphaK/2)]%Note: this doesnt work
+           %because we're in 2d
        end
    else %Lmax is less than minimum
        if%Lmax is less than Lmax/2
@@ -20,6 +22,8 @@ while(iterator<41 && ~(result{iterator} == result{iteratior-1} ))
            return;
        else%Lmax/2 is less than Lmax
            %add Lmax/2, update AlphaK
+           %result = [result; AlphaK/2, f(AlphaK/2)]%Note: this doesnt work
+           %because we're in 2d
        end
    end
    iterator = iterator + 1;
