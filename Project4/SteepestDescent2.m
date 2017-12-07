@@ -1,19 +1,19 @@
-function result = SteepestDescent1()
+function result = SteepestDescent2()
 
-LMax = 1;
+LMax = -1.2;
 phiLMax = 1;
 
-LMaxHalf = 0.5;
+LMaxHalf = -.6;
 phiLMaxHalf = 0.5;
 
-start = 0;
-starty = 0;
+start = -2;
+starty = -2;
 
 iterator = 1;
 while( iterator < 30 )
-   alpha1 = 2*(LMax^2) + 3*(phiLMax^2);
-   alpha2 = 2*(LMaxHalf^2) + 3*(phiLMaxHalf^2);
-   alpha3 = 2*(start^2) + 3*(starty^2);
+   alpha1 = (1-LMax)^2 + 100*(phiLMax-LMax^2)^2;
+   alpha2 = (1-LMaxHalf)^2 + 100*(phiLMaxHalf-LMaxHalf^2)^2;
+   alpha3 = (1-start)^2 + 100*(starty-start^2)^2;
    
    if( alpha2 < alpha1 && alpha2 < alpha3) %midpoint is lowest value
        if( alpha1 < alpha3) %LMax is less than start, move start and LMaxHalf
